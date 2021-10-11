@@ -1,0 +1,423 @@
+[{
+  "_id": {
+    "$oid": "61235dc49ae63daf64da97d9"
+  },
+  "venu": [
+    {
+      "id": 1,
+      "text": "Indoor",
+      "name": "Indoor",
+      "value": true
+    },
+    {
+      "id": 2,
+      "text": "Outdoor",
+      "name": "Outdoor",
+      "value": false
+    },
+    {
+      "id": 3,
+      "text": "Poolside",
+      "name": "Poolside",
+      "value": true
+    },
+    {
+      "id": 4,
+      "text": "Terrace",
+      "name": "Terrace",
+      "value": false
+    }
+  ],
+  "image": [
+    {
+      "asset_id": "979906081e2f6ee6caf99000a328f848",
+      "public_id": "category/jkrjmlxncnifvpf64bsq",
+      "version": 1629707716,
+      "version_id": "adce97f6161983e22fb257a5e0cb2adc",
+      "signature": "e13282534ab29aea97768321fa185da1e0381602",
+      "width": 280,
+      "height": 300,
+      "format": "jpg",
+      "resource_type": "image",
+      "created_at": "2021-08-23T08:35:16Z",
+      "tags": [],
+      "bytes": 19866,
+      "type": "upload",
+      "etag": "f158c70aca5bfa03e0e98b13a3718a5e",
+      "placeholder": false,
+      "url": "http://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/jkrjmlxncnifvpf64bsq.jpg",
+      "secure_url": "https://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/jkrjmlxncnifvpf64bsq.jpg",
+      "access_mode": "public",
+      "original_filename": "3"
+    },
+    {
+      "asset_id": "92fb7030f48c2bacb771ba42895cc7ba",
+      "public_id": "category/n1zjfgju1pskj6qezfo8",
+      "version": 1629707716,
+      "version_id": "adce97f6161983e22fb257a5e0cb2adc",
+      "signature": "6c93279fdbe4a50a4ef885fe2a7938082d867109",
+      "width": 280,
+      "height": 300,
+      "format": "jpg",
+      "resource_type": "image",
+      "created_at": "2021-08-23T08:35:16Z",
+      "tags": [],
+      "bytes": 13814,
+      "type": "upload",
+      "etag": "67711e73097c0242150c93ef7e305b60",
+      "placeholder": false,
+      "url": "http://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/n1zjfgju1pskj6qezfo8.jpg",
+      "secure_url": "https://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/n1zjfgju1pskj6qezfo8.jpg",
+      "access_mode": "public",
+      "original_filename": "9"
+    }
+  ],
+  "name": "dhanapal",
+  "brand": "Aperiam eius ut prae",
+  "contact_person": "Ipsa praesentium op",
+  "email": [
+    {
+      "email": "dhana@d.com"
+    }
+  ],
+  "website": "https://www.xisokamed.org",
+  "contact_number": [
+    {
+      "contact_number": "9952526257"
+    }
+  ],
+  "facebook": "Aut quis tenetur in ",
+  "instagram": "Eius et labore vel f",
+  "youtube": "Iusto voluptatem Si",
+  "city": "Aut voluptates enim ",
+  "address": "Sunt cillum corporis",
+  "established_year": "2010-06-24",
+  "experience": "Harum non et omnis a",
+  "accomodation": "No",
+  "food_served": "Yes",
+  "dimension": "Inventore sed velit ",
+  "area": "Aliqua Magni natus ",
+  "height": "Lorem sed id quasi i",
+  "about": "123Eiusmod id velit ut",
+  "createdTime": {
+    "$date": "2021-08-23T08:35:16.811Z"
+  },
+  "__v": 0,
+  "category": "EventSpace"
+},{
+  "_id": {
+    "$oid": "6125cdeba9d8b67d2d488057"
+  },
+  "venu": [
+    {
+      "id": 1,
+      "text": "Indoor",
+      "name": "Indoor",
+      "value": true
+    },
+    {
+      "id": 2,
+      "text": "Outdoor",
+      "name": "Outdoor",
+      "value": false
+    },
+    {
+      "id": 3,
+      "text": "Poolside",
+      "name": "Poolside",
+      "value": true
+    },
+    {
+      "id": 4,
+      "text": "Terrace",
+      "name": "Terrace",
+      "value": false
+    }
+  ],
+  "image": [
+    {
+      "asset_id": "979906081e2f6ee6caf99000a328f848",
+      "public_id": "category/jkrjmlxncnifvpf64bsq",
+      "version": 1629707716,
+      "version_id": "adce97f6161983e22fb257a5e0cb2adc",
+      "signature": "e13282534ab29aea97768321fa185da1e0381602",
+      "width": 280,
+      "height": 300,
+      "format": "jpg",
+      "resource_type": "image",
+      "created_at": "2021-08-23T08:35:16Z",
+      "tags": [],
+      "bytes": 19866,
+      "type": "upload",
+      "etag": "f158c70aca5bfa03e0e98b13a3718a5e",
+      "placeholder": false,
+      "url": "https://i.picsum.photos/id/10/500/300.jpg?hmac=6PdRvC3y6HwIq_fP7fVb-aUd4xS99xtYE9id8r-C1Dg",
+      "secure_url": "https://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/jkrjmlxncnifvpf64bsq.jpg",
+      "access_mode": "public",
+      "original_filename": "3"
+    },
+    {
+      "asset_id": "92fb7030f48c2bacb771ba42895cc7ba",
+      "public_id": "category/n1zjfgju1pskj6qezfo8",
+      "version": 1629707716,
+      "version_id": "adce97f6161983e22fb257a5e0cb2adc",
+      "signature": "6c93279fdbe4a50a4ef885fe2a7938082d867109",
+      "width": 280,
+      "height": 300,
+      "format": "jpg",
+      "resource_type": "image",
+      "created_at": "2021-08-23T08:35:16Z",
+      "tags": [],
+      "bytes": 13814,
+      "type": "upload",
+      "etag": "67711e73097c0242150c93ef7e305b60",
+      "placeholder": false,
+      "url": "http://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/n1zjfgju1pskj6qezfo8.jpg",
+      "secure_url": "https://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/n1zjfgju1pskj6qezfo8.jpg",
+      "access_mode": "public",
+      "original_filename": "9"
+    }
+  ],
+  "name": "Billa",
+  "brand": "Aperiam eius ut prae",
+  "contact_person": "Ipsa praesentium op",
+  "email": [
+    {
+      "email": "dhana@d.com"
+    }
+  ],
+  "website": "https://www.xisokamed.org",
+  "contact_number": [
+    {
+      "contact_number": "9952526257"
+    }
+  ],
+  "facebook": "Aut quis tenetur in ",
+  "instagram": "Eius et labore vel f",
+  "youtube": "Iusto voluptatem Si",
+  "city": "coimbatore ",
+  "address": "Sunt cillum corporis",
+  "established_year": "2010-06-24",
+  "experience": "Harum non et omnis a",
+  "accomodation": "No",
+  "food_served": "Yes",
+  "dimension": "Inventore sed velit ",
+  "area": "Aliqua Magni natus ",
+  "height": "Lorem sed id quasi i",
+  "about": "Eiusmod id velit ut",
+  "createdTime": {
+    "$date": "2021-08-23T08:35:16.811Z"
+  },
+  "__v": 0,
+  "category": "EventSpace"
+},{
+  "_id": {
+    "$oid": "6125ce5ba9d8b67d2d488058"
+  },
+  "venu": [
+    {
+      "id": 1,
+      "text": "Indoor",
+      "name": "Indoor",
+      "value": true
+    },
+    {
+      "id": 2,
+      "text": "Outdoor",
+      "name": "Outdoor",
+      "value": false
+    },
+    {
+      "id": 3,
+      "text": "Poolside",
+      "name": "Poolside",
+      "value": true
+    },
+    {
+      "id": 4,
+      "text": "Terrace",
+      "name": "Terrace",
+      "value": false
+    }
+  ],
+  "image": [
+    {
+      "asset_id": "979906081e2f6ee6caf99000a328f848",
+      "public_id": "category/jkrjmlxncnifvpf64bsq",
+      "version": 1629707716,
+      "version_id": "adce97f6161983e22fb257a5e0cb2adc",
+      "signature": "e13282534ab29aea97768321fa185da1e0381602",
+      "width": 280,
+      "height": 300,
+      "format": "jpg",
+      "resource_type": "image",
+      "created_at": "2021-08-23T08:35:16Z",
+      "tags": [],
+      "bytes": 19866,
+      "type": "upload",
+      "etag": "f158c70aca5bfa03e0e98b13a3718a5e",
+      "placeholder": false,
+      "url": "https://i.picsum.photos/id/362/600/400.jpg?hmac=0FgujoN2BYsVv9pdnADJgu2ubPSA-bfNvDqV16b3kyk",
+      "secure_url": "https://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/jkrjmlxncnifvpf64bsq.jpg",
+      "access_mode": "public",
+      "original_filename": "3"
+    },
+    {
+      "asset_id": "92fb7030f48c2bacb771ba42895cc7ba",
+      "public_id": "category/n1zjfgju1pskj6qezfo8",
+      "version": 1629707716,
+      "version_id": "adce97f6161983e22fb257a5e0cb2adc",
+      "signature": "6c93279fdbe4a50a4ef885fe2a7938082d867109",
+      "width": 280,
+      "height": 300,
+      "format": "jpg",
+      "resource_type": "image",
+      "created_at": "2021-08-23T08:35:16Z",
+      "tags": [],
+      "bytes": 13814,
+      "type": "upload",
+      "etag": "67711e73097c0242150c93ef7e305b60",
+      "placeholder": false,
+      "url": "http://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/n1zjfgju1pskj6qezfo8.jpg",
+      "secure_url": "https://res.cloudinary.com/dsczip846/image/upload/v1629707716/category/n1zjfgju1pskj6qezfo8.jpg",
+      "access_mode": "public",
+      "original_filename": "9"
+    }
+  ],
+  "name": "Cookies",
+  "brand": "Aperiam eius ut prae",
+  "contact_person": "Ipsa praesentium op",
+  "email": [
+    {
+      "email": "dhana@d.com"
+    }
+  ],
+  "website": "https://www.xisokamed.org",
+  "contact_number": [
+    {
+      "contact_number": "9952526257"
+    }
+  ],
+  "facebook": "Aut quis tenetur in ",
+  "instagram": "Eius et labore vel f",
+  "youtube": "Iusto voluptatem Si",
+  "city": "coimbatore ",
+  "address": "Sunt cillum corporis",
+  "established_year": "2010-06-24",
+  "experience": "Harum non et omnis a",
+  "accomodation": "No",
+  "food_served": "Yes",
+  "dimension": "Inventore sed velit ",
+  "area": "Aliqua Magni natus ",
+  "height": "Lorem sed id quasi i",
+  "about": "Eiusmod id velit ut",
+  "createdTime": {
+    "$date": "2021-08-23T08:35:16.811Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6125ce92a9d8b67d2d488059"
+  },
+  "venu": [
+    {
+      "id": 1,
+      "text": "Indoor",
+      "name": "Indoor",
+      "value": true
+    },
+    {
+      "id": 2,
+      "text": "Outdoor",
+      "name": "Outdoor",
+      "value": false
+    },
+    {
+      "id": 3,
+      "text": "Poolside",
+      "name": "Poolside",
+      "value": true
+    },
+    {
+      "id": 4,
+      "text": "Terrace",
+      "name": "Terrace",
+      "value": false
+    }
+  ],
+  "image": [
+    {
+      "asset_id": "4d4ad37c6fe4a0e1d8fc66525a5f8c5d",
+      "public_id": "category/gxsrmjbxkybun5xcs5g9",
+      "version": 1630666420,
+      "version_id": "228c99059dc7da4a01a96c8deb9bf12a",
+      "signature": "4cb652ddae183c668d39fa04ad1765387c389609",
+      "width": 280,
+      "height": 300,
+      "format": "jpg",
+      "resource_type": "image",
+      "created_at": "2021-09-03T10:53:40Z",
+      "tags": [],
+      "bytes": 14459,
+      "type": "upload",
+      "etag": "48b2ba00632e1e67a98800220980c664",
+      "placeholder": false,
+      "url": "http://res.cloudinary.com/dsczip846/image/upload/v1630666420/category/gxsrmjbxkybun5xcs5g9.jpg",
+      "secure_url": "https://res.cloudinary.com/dsczip846/image/upload/v1630666420/category/gxsrmjbxkybun5xcs5g9.jpg",
+      "access_mode": "public",
+      "original_filename": "7"
+    },
+    {
+      "asset_id": "24ac36b1950a3c0e3d06cb904f7e23f8",
+      "public_id": "category/bbkrfzjebue3vyg1wa68",
+      "version": 1630666389,
+      "version_id": "355f112787d227a0d3c392eb609ac0fa",
+      "signature": "50080063374ba70e6e3d9c69c0f4affca0d72789",
+      "width": 280,
+      "height": 300,
+      "format": "jpg",
+      "resource_type": "image",
+      "created_at": "2021-09-03T10:53:09Z",
+      "tags": [],
+      "bytes": 12235,
+      "type": "upload",
+      "etag": "938f88a9a92898813d70d98b17dcaf94",
+      "placeholder": false,
+      "url": "http://res.cloudinary.com/dsczip846/image/upload/v1630666389/category/bbkrfzjebue3vyg1wa68.jpg",
+      "secure_url": "https://res.cloudinary.com/dsczip846/image/upload/v1630666389/category/bbkrfzjebue3vyg1wa68.jpg",
+      "access_mode": "public",
+      "original_filename": "8"
+    }
+  ],
+  "name": "Heyeventz",
+  "brand": "Aperiam eius ut prae",
+  "contact_person": "Ipsa praesentium op",
+  "email": [
+    {
+      "email": "dhana@d.com"
+    }
+  ],
+  "website": "https://www.xisokamed.org",
+  "contact_number": [
+    {
+      "contact_number": "9952526257"
+    }
+  ],
+  "facebook": "Aut quis tenetur in ",
+  "instagram": "Eius et labore vel f",
+  "youtube": "Iusto voluptatem Si",
+  "city": "coimbatore",
+  "address": "Sunt cillum corporis",
+  "established_year": "2010-06-24",
+  "experience": "Harum non et omnis a",
+  "accomodation": "No",
+  "food_served": "Yes",
+  "dimension": "27 m. x 16 m",
+  "area": "439 sq. m ",
+  "height": "4 m",
+  "about": "123Experience the peak of luxury at the Vivanta Coimbatore by Taj-Surya in the commercial hub of south India. The hotel has a lavish outdoor swimming pool surrounded by numerous poolside benches and a serene ambiance. All the rooms offer a glass-window wall overlooking a stunning city view.",
+  "createdTime": {
+    "$date": "2021-08-23T08:35:16.811Z"
+  },
+  "__v": 0
+}]

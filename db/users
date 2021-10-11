@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "611a11c661eda67fa69c9968"
+  },
+  "email": "jebit@mailinator.com",
+  "password": "$2b$10$RbiJa7hENXbw3.qI9MTJC.1H9nJ7lS6FiD08WG20Oz0yzIJj5NdTS",
+  "date": {
+    "$date": "2021-08-16T07:20:38.727Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "611a11fd61eda67fa69c996b"
+  },
+  "email": "dhana@d.com",
+  "password": "$2b$10$o367j5/FEenkIfY2Ab.jVO83xgCtAEkwqt6fcap5ZLN.qAcKowieK",
+  "date": {
+    "$date": "2021-08-16T07:21:33.581Z"
+  },
+  "__v": 0,
+  "name": "Admin"
+}]
