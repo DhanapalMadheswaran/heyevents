@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ContentArea from "./contentArea";
-import NavBar from "./navBar";
-import Footer from "./footer";
+import NavBar from "../includes/header";
+import Footer from "../includes/footer";
 import OtherDetails from "./otherDetails";
 import "../../admin/components/vendor/vendor.css";
 import axios from "axios";

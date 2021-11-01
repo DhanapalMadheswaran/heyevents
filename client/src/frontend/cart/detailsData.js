@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import "../venuSelection/venue-selection.css";
+
 function CartData(props) {
   const [formData, setFormData] = useState({});
   const [imgData, setimgData] = useState({});
   const cartData = JSON.parse(localStorage.getItem("cartData"));
-  const id = cartData.vendorID;
+
   useEffect(() => {
     async function fetchMyAPI() {
       await axios
-        .get(`http://localhost:5000/api/vendor/getDetailsById/${id}`)
+        .get(
+          `http://localhost:5000/api/vendor/getDetailsById/${cartData[0].categoryID}`
+        )
         .then((response) => {
-          setimgData(response.data.vendor[0].image[0]);
-          setFormData(response.data.vendor[0]);
+          setFormData(response.data[0]);
+          setimgData(response.data[0].image[0]);
         });
     }
-
     fetchMyAPI();
   }, []);
+  console.log(formData);
   return (
     <div>
       <div class="row">
@@ -80,18 +84,39 @@ function CartData(props) {
             </span>
           </div>
 
-          <div className="box1">
-            <div className="slide-img">
-              <img src={imgData.url} alt="event" />
-            </div>
-            <div className="detail-box">
-              <div className="type5">
-                {formData.name}
-                <br />
-                <b>{formData.address}</b>
+          <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div className="box1">
+              <div className="slide-img">
+                <img alt="" src={imgData?.url} className="venu-img" />
+              </div>
+
+              <div className="detail-box">
+                <div className="type">
+                  Rendevous - Vivanta
+                  <h5>
+                    <b>Race Course</b>
+                  </h5>
+                  <img src="./frontend/assets/images/divide-line.svg" alt="" />
+                  <h3>
+                    <b>@1,900</b>
+                  </h3>
+                </div>
+                <a href="#!" className="price">
+                  <h3>$45</h3>
+                </a>
+              </div>
+
+              <div className="detail-box">
+                <div className="type">
+                  Rendevous - Vivanta
+                  <br />
+                  <img src="./frontend/assets/images/divide-line.svg" alt="" />
+                  <h3>
+                    <b>@1,900</b>
+                  </h3>
+                </div>
               </div>
             </div>
-            <div className="detail-box-border"></div>
           </div>
         </div>
 
@@ -105,9 +130,10 @@ function CartData(props) {
                     alt="scale"
                   />
                   <span>
-                    <b>Seating Style</b>
-                    <br />
-                    Cluster Formation
+                    <b>Seating Style:{cartData[0].seating}</b>
+                  </span>{" "}
+                  <span>
+                    <b>Session:{cartData[0].session}</b>
                   </span>
                   <a className="hall-rate" href="#!">
                     Rating
@@ -253,18 +279,12 @@ function CartData(props) {
                 </p>
                 <div className="row">
                   <div className="col-6">
-                    <button
-                      type="button"
-                      className="btn btn-block btn-outline-fee"
-                    >
-                      View More
+                    <button type="button" className="btn btn-view">
+                      View Menu
                     </button>
                   </div>
                   <div className="col-6">
-                    <button
-                      type="button"
-                      className="btn btn-block btn-outline-fee"
-                    >
+                    <button type="button" className="btn btn-view">
                       Edit
                     </button>
                   </div>

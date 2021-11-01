@@ -17,20 +17,16 @@ function ListData(props) {
     setList(data);
   };
 
-  const filterArray = () => {
-    setList(
-      data
-        .filter((item) => {
-          return item.name.toLowerCase().includes(search.toLowerCase());
-        })
-        .filter((item) => {
-          return Number(rating) >= Number(item.ratting);
-        })
-        .filter((item) => {
-          // eslint-disable-next-line no-mixed-operators
-          return value[0] <= item.price <= value[1];
-        })
-    );
+  const filterArray = (e) => {
+    let data = {
+      search_text: search,
+      ratting: rating,
+      minimum_price: value[0],
+      maximum_price: value[1],
+      ...e,
+    };
+
+    props.filter(data);
   };
 
   useEffect(() => {
@@ -38,16 +34,16 @@ function ListData(props) {
   }, [data]);
   const handleOnChange = (e) => {
     setSearch(e);
-    filterArray();
+    filterArray({ search_text: e });
   };
   // Catch Rating value
   const handleRating = (rate) => {
     setRating(rate);
-    filterArray();
+    filterArray({ ratting: rate });
   };
   const rangeSelector = (event, newValue) => {
     setValue(newValue);
-    filterArray();
+    filterArray({ minimum_price: newValue[0], maximum_price: newValue[1] });
   };
 
   return (

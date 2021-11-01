@@ -1,8 +1,8 @@
 const Routes = {
   noPage: { url: "/welcome", title: "HeyEventz-Admin" },
   dashboard: { url: "/dashboard", title: "HeyEventz-Admin" },
-  admin: { url: "/dashboard", title: "HeyEventz-Admin" },
   register: { url: "/register", title: "HeyEventz-Admin" },
+  admin: { url: "/admin", title: "HeyEventz-Admin" },
   logIn: { url: "/login", title: "HeyEventz-Admin" },
   logOut: { url: "/logout", title: "HeyEventz-Admin" },
   signUp: { url: "/signup", title: "HeyEventz-Admin" },
@@ -11,6 +11,8 @@ const Routes = {
   notFound: { url: "/not-found", title: "HeyEventz-Admin" },
   vendorList: { url: "/vendorList", title: "HeyEventz-Admin" },
   addVendor: { url: "/addVendor", title: "HeyEventz-Admin" },
+  Slots: { url: "/slots", title: "HeyEventz-Slots" },
+  addSlots: { url: "/add_slots", title: "HeyEventz-Admin" },
 
   //Frontend
   home: { url: "/", title: "Home Page" },

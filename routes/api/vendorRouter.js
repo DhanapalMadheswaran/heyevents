@@ -19,14 +19,42 @@ router.get("/getLatest", async (req, res) => {
     });
 });
 
-//Get Latest For Frontend
+//Get Latest For Category List
 router.get("/getAllVendorsByCategory/:id/", async (req, res) => {
-  Promise.all([Vendor.find({ category: req.params.id })]).then((user) => {
-    //console.log(("user=%O member=%O", user, member));
-    res.status(200).send({
-      vendor: user,
+  var search_text = req.query.search_text;
+  var ratting = req.query.ratting;
+  var minimum_price = req.query.minimum_price;
+  var maximum_price = req.query.maximum_price;
+  var condition = [
+    { category: req.params.id },
+    { price: { $gte: minimum_price || 0 } },
+    { price: { $lte: maximum_price || 5000000 } },
+  ];
+  if (search_text !== "" && search_text !== null && search_text !== undefined) {
+    var regexQuery = {
+      $or: [
+        {
+          name: new RegExp(search_text, "i"),
+        },
+        {
+          brand: new RegExp(search_text, "i"),
+        },
+      ],
+    };
+    condition.push(regexQuery);
+  }
+  //console.log(condition);
+  Vendor.find({
+    $and: condition,
+  })
+    .then((user) => {
+      res.status(200).send({
+        vendor: user,
+      });
+    })
+    .catch((e) => {
+      console.log(e);
     });
-  });
 });
 
 //description
@@ -35,7 +63,6 @@ router.get("/getById/:id/", async (req, res) => {
     Vendor.find({ _id: req.params.id }),
     Vendor.find({ _id: { $ne: req.params.id } }),
   ]).then(([user, member]) => {
-    //console.log(("user=%O member=%O", user, member));
     res.status(200).send({
       vendor: user,
       related: member,

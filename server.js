@@ -7,6 +7,7 @@ const vendorRouter = require("./routes/api/vendorRouter");
 const sliderRouter = require("./routes/api/sliderRouter");
 const bannerRouter = require("./routes/api/bannerRouter");
 const userRouter = require("./routes/api/authenticationRouter");
+const slotsRouter = require("./routes/api/slotsRouter");
 const cors = require("cors");
 const app = express();
 app.use(cors());
@@ -56,6 +57,7 @@ app.use("/api/vendor", vendorRouter);
 app.use("/api/slider", sliderRouter);
 app.use("/api/banner", bannerRouter);
 app.use("/api/user", userRouter);
+app.use("/api/slots", slotsRouter);
 
 const port = process.env.PORT || 5000;
 
