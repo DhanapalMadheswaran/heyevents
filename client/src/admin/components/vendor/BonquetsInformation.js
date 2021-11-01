@@ -37,7 +37,7 @@ export default function BonquestInformation(props) {
     if (props?.data?.venu?.length <= 0) {
       props.data.venu = checkboxes;
     }
-    if (props?.data?.hall?.length <= 0) {
+    if (props.data.hall === "undefined") {
       props.data.hall = halltype;
     }
     if (props?.data?.image?.length > 0) {
@@ -117,7 +117,7 @@ export default function BonquestInformation(props) {
   const handleAddClickImage = () => {
     setinputImage([...inputImage, { image: "" }]);
   };
-
+  console.log(props.data.hall);
   return (
     <React.Fragment>
       <Typography variant="h4" gutterBottom>

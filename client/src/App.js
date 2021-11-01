@@ -9,9 +9,9 @@ import Container from "./admin/components/Container";
 import Login from "./admin/components/auth/login";
 import Register from "./admin/components/auth/register";
 import Banner from "./admin/components/banner";
-
+import AddSlots from "./admin/components/slots/addSlots";
 //FrontEnd
-import Main from "./frontend/includes/Main";
+import Main from "./frontend/home/Main";
 import VenuSelection from "./frontend/venuSelection";
 import PrivateRoute from "./shared/PrivateRoute";
 import CategoryList from "./frontend/categoryList";
@@ -49,11 +49,7 @@ function App() {
               path="/register"
               component={Register}
             ></PrivateRoute>
-            <PrivateRoute
-              exact
-              path="/admin"
-              component={Dashboard}
-            ></PrivateRoute>
+            <PrivateRoute exact path="/admin" component={Login}></PrivateRoute>
             <PrivateRoute
               exact
               path="/dashboard"
@@ -78,6 +74,11 @@ function App() {
               exact
               path="/category"
               component={Category}
+            ></PrivateRoute>
+            <PrivateRoute
+              exact
+              path="/add_slots"
+              component={AddSlots}
             ></PrivateRoute>
             <PrivateRoute
               exact

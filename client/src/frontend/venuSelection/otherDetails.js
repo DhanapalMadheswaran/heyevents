@@ -75,46 +75,85 @@ function OtherDetails(props) {
           <p className="tab-area-cont">
             <b>Languages Spoken</b>
             <br />
-            <img src="./frontend/assets/images/icons/tamil-lang-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/tamil-lang-icon.svg"
+              alt="..."
+            />{" "}
             Tamil &emsp;|&emsp;
-            <img src="./frontend/assets/images/icons/hindi-lang-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/hindi-lang-icon.svg"
+              alt="..."
+            />{" "}
             Hindi &emsp;| &emsp;
-            <img src="./frontend/assets/images/icons/eng-lang-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/eng-lang-icon.svg"
+              alt="..."
+            />
             English <br />
             <br />
             <b>Amenities</b>
             <br />
-            <img src="./frontend/assets/images/icons/elevator-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/elevator-icon.svg"
+              alt="..."
+            />
             Elevator &emsp;|&emsp;
-            <img src="./frontend/assets/images/icons/disabled-guest-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/disabled-guest-icon.svg"
+              alt="..."
+            />
             Facilities for Disabled guest &emsp;|&emsp;
             <br />
-            <img src="./frontend/assets/images/icons/wifi-icon.svg" /> Wifi in
-            Longue &emsp;|&emsp;
-            <img src="./frontend/assets/images/icons/valet-parking-icon.svg" />{" "}
+            <img src="./frontend/assets/images/icons/wifi-icon.svg" alt="..." />
+            Wifi in Longue &emsp;|&emsp;
+            <img
+              src="./frontend/assets/images/icons/valet-parking-icon.svg"
+              alt="..."
+            />
             Valet Parking &emsp;|&emsp;
-            <img src="./frontend/assets/images/icons/pet-icon.svg" />{" "}
+            <img src="./frontend/assets/images/icons/pet-icon.svg" alt="..." />
             Pet-Friendly <br />
             <br />
             <b>Cleanliness and Safety</b>
             <br />
-            <img src="./frontend/assets/images/icons/temp-check-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/temp-check-icon.svg"
+              alt="..."
+            />
             Temp Check &emsp;|&emsp;
-            <img src="./frontend/assets/images/icons/trained-staff-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/trained-staff-icon.svg"
+              alt="..."
+            />
             Trained Staff's &emsp;|&emsp;
-            <img src="./frontend/assets/images/icons/hand-sanitizer-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/hand-sanitizer-icon.svg"
+              alt="..."
+            />
             Hand Sanitizer <br />
             <br />
             <b>Accessibility</b>
             <br />
-            <img src="./frontend/assets/images/icons/airport-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/airport-icon.svg"
+              alt="..."
+            />
             Airport - 9km &emsp;|&emsp;
-            <img src="./frontend/assets/images/icons/taxi-station-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/taxi-station-icon.svg"
+              alt="..."
+            />
             Taxi Station - 4km &emsp;|&emsp;
             <br />
-            <img src="./frontend/assets/images/icons/bus-station-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/bus-station-icon.svg"
+              alt="..."
+            />
             Bus Stand - 5km &emsp;|&emsp;
-            <img src="./frontend/assets/images/icons/railway-station-icon.svg" />{" "}
+            <img
+              src="./frontend/assets/images/icons/railway-station-icon.svg"
+              alt="..."
+            />
             Railway Station - 12km <br />
             <br />
           </p>

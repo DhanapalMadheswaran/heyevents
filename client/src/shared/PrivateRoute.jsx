@@ -8,6 +8,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   const authService = new AuthService();
 
   const nonAuthenticatedPaths = [
+    Constants.routes.admin.url,
     Constants.routes.logIn.url,
     Constants.routes.register.url,
     Constants.routes.home.url,
@@ -21,7 +22,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     Constants.routes.cartDetailsPage.url,
   ];
   const avaliablePaths = Object.values(Constants.routes).map((o) => o.url);
-  //console.log(avaliablePaths);
+  //console.log(path);
   return (
     <Route
       location={location}
@@ -46,7 +47,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: Constants.routes.notFound.url,
+              pathname: Constants.routes.logIn.url,
             }}
           />
         )

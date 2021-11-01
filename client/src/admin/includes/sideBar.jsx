@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { Link } from "react-router-dom";
 
@@ -30,13 +30,11 @@ export default function SideBar() {
             <img
               className="logo-light logo-img"
               src="./images/logo.png"
-              srcset="./images/logo2x.png 2x"
               alt="logo"
             />
             <img
               className="logo-dark logo-img"
               src="./images/logo-dark.png"
-              srcset="./images/logo-dark2x.png 2x"
               alt="logo-dark"
             />
           </a>
@@ -79,7 +77,14 @@ export default function SideBar() {
                   <span className="nk-menu-text"> Banner</span>
                 </Link>
               </li>
-
+<li className="nk-menu-item">
+                <Link to="/add_slots" className="nk-menu-link">
+                  <span className="nk-menu-icon">
+                    <em className="icon ni ni-layers"></em>
+                  </span>
+                  <span className="nk-menu-text"> Add Slots</span>
+                </Link>
+              </li>
               <li className="nk-menu-heading">
                 <h6 className="overline-title text-primary-alt">
                   Pre-Built Pages
@@ -92,18 +97,16 @@ export default function SideBar() {
                   </span>
                   <span className="nk-menu-text">Vendor</span>
                 </Link>
-                <ul className="nk-menu-sub">
-                  <li className="nk-menu-item">
-                    <Link to="/vendorList" className="nk-menu-link">
-                      <span className="nk-menu-text">Vendor List</span>
-                    </Link>
-                  </li>
-                  <li className="nk-menu-item">
-                    <Link to="/addVendor" className="nk-menu-link">
-                      <span className="nk-menu-text">Add Vendor</span>
-                    </Link>
-                  </li>
-                </ul>
+                 <ul class="nk-menu-sub">
+                      <li className="nk-menu-item">
+                          <a href="vendorList" className="nk-menu-link"><span class="nk-menu-text">User List - Regular</span></a>
+                      </li>
+                      <li className="nk-menu-item">
+                          <a href="addVendor" className="nk-menu-link"><span class="nk-menu-text">User List - Compact</span></a>
+                      </li>
+                      
+                      
+                  </ul>
               </li>
             </ul>
           </div>

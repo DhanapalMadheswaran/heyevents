@@ -1,3 +1,32 @@
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #642424 !important;
+}
+.modal-container {
+  position: relative;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 60%;
+  height: auto !important;
+  pointer-events: auto;
+  background-color: #d19050;
+  background-clip: padding-box;
+  outline: 0;
+  top: 1% !important;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+  display: none;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
 .owl-carousel .owl-item .venu-img {
   position: fixed !important;
   width: 78% !important;
@@ -168,6 +197,39 @@
   background-color: #801c17;
 }
 
+.menu-list-tabs {
+  padding: 25px;
+}
+.menu-list-tabs label {
+  width: 100%;
+}
+.menu-bg-color {
+  padding: 40px;
+}
+.menu-bg-color h3 {
+  color: #fff;
+}
+.head-price h3 {
+  color: #fff;
+}
+.edit-btn button {
+  float: right;
+  color: #fff;
+  padding: 5px;
+}
+.menu-item h6 {
+  font-size: 14px;
+  margin-left: 10px;
+}
+.popup-1 p {
+  margin-left: 25px;
+}
+.start span {
+  margin-left: 20px;
+}
+.lunch-checkbox .check {
+  margin-left: 35px;
+}
 /*Review Area - Start*/
 #testimonials .carousel-indicators li {
   width: 20px;

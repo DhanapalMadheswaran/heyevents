@@ -526,7 +526,7 @@ svg {
 }
 
 .slide-img {
-  position: absolute;
+  position: fixed !important;
 }
 
 .slide-img img {

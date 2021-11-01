@@ -45,7 +45,7 @@ const VendorSchema = mongoose.Schema({
     type: String,
   },
   experience: { type: String },
-  price: { type: String },
+  price: { type: Number },
   accomodation: { type: String },
   accessability: { type: String },
   cleaness: { type: String },
@@ -69,11 +69,11 @@ const VendorSchema = mongoose.Schema({
     default: Date.now,
   },
   ratting: {
-    type:Number
+    type: Number,
   },
   price: {
-    type:Number
-  }
+    type: Number,
+  },
 });
 
 module.exports = mongoose.model("Vendor", VendorSchema);
