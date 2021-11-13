@@ -4,13 +4,27 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Gallery from "./gallery";
 import Modal from "./Modal";
-import SelectionModal from "./selectionModal";
 import LoginModal from "./loginModal";
+import SeatingModal from "./prefrenceModals/seatingModal";
+import SelectionModal from "./prefrenceModals/selectionModal";
+import BreakFastModal from "./prefrenceModals/breakfastModal";
+import LunchModal from "./prefrenceModals/lunchModal";
+import DinnerModal from "./prefrenceModals/dinnerModal";
+import EditMenuModal from "./editMenuModals/editMenuModal";
+import { CartUtils } from "../../shared/utils";
+import Toast from "../../components/toast";
+import Calendar from "react-calendar";
+import moment from "moment";
 function ContentArea(props) {
+  const [value, setValue] = useState();
+  const { category: category_name = "EventSpace" } = props;
   const history = useHistory();
   const [formData, setFormData] = useState({});
   const [session, setSession] = useState({
     session: "Select Session",
+  });
+  const [seating, setSeating] = useState({
+    seating: "Select Seating",
   });
   const [model, setModel] = useState(false);
   const [type, setType] = useState("session");
@@ -30,8 +44,13 @@ function ContentArea(props) {
   };
 
   const handleSubmit = (e) => {
-    setSession({ session: e.value });
-    modalClose();
+    if (type === "seating") {
+      setSeating({ seating: e.value });
+      modalClose();
+    } else {
+      setSession({ session: e.value });
+      modalClose();
+    }
   };
   const modalOpen = (modeltype) => {
     if (modeltype === "login") {
@@ -46,12 +65,24 @@ function ContentArea(props) {
         const lastItem = window.location.pathname.split("-").pop();
         //add vendor data to user cart
         try {
-          localStorage.setItem(
-            "cartData",
-            JSON.stringify({ vendorID: lastItem, session: session })
-          );
+          let {
+            success = false,
+            error = false,
+            warning = false,
+          } = CartUtils(category_name, session, seating, lastItem);
 
-          history.push("/cart-details");
+          if (warning) {
+            Toast("warning", "🦄 Vendor Already Exists in your Cart!");
+
+            history.push("/cart-details");
+          }
+          if (success) {
+            Toast("success", "🦄 Vendor Added in your Cart!");
+            history.push("/cart-details");
+          }
+          if (error) {
+            Toast("error", "🦄 Please Select Session/Searting Preference!");
+          }
         } catch (err) {
           console.error(err);
         }
@@ -89,11 +120,23 @@ function ContentArea(props) {
         const lastItem = window.location.pathname.split("-").pop();
         //add vendor data to user cart
         try {
-          localStorage.setItem(
-            "cartData",
-            JSON.stringify({ vendorID: lastItem, session: session })
-          );
-          history.push("/cart-details");
+          let {
+            success = false,
+            error = false,
+            warning = false,
+          } = CartUtils(category_name, session, seating, lastItem);
+          if (warning) {
+            Toast("warning", "🦄 Vendor Already Exists in your Cart!");
+
+            history.push("/cart-details");
+          }
+          if (success) {
+            Toast("success", "🦄 Vendor Added in your Cart!");
+            history.push("/cart-details");
+          }
+          if (error) {
+            Toast("error", "🦄 Try Again!");
+          }
         } catch (err) {
           console.error(err);
         }
@@ -103,6 +146,37 @@ function ContentArea(props) {
       }
     } catch (err) {
       console.log(err);
+    }
+  };
+
+  const openFood = (e) => {
+    setModel(true);
+    setType(e.target.value);
+  };
+
+  const foodSubmit = (e) => {
+    if (e === "editMenu") {
+      setModel(true);
+      setType("editMenu");
+    }
+  };
+  const changeDate = async (e) => {
+    let v = moment(e).format("DD/MM/YYYY");
+
+    const lastItem = window.location.pathname.split("-").pop();
+    try {
+      const getslots = await axios.get(
+        `http://localhost:5000/api/slots/${lastItem}`
+      );
+
+      try {
+        localStorage.setItem("event_date", v);
+        localStorage.setItem("slots", JSON.stringify(getslots.data[0]?.slots));
+      } catch (err) {
+        console.error(err);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -117,18 +191,13 @@ function ContentArea(props) {
 
         <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 ">
           <div className="row">
-            <div className="col-12 bk-area1">
-              <div id="bk-area11">
-                <div>
-                  <img
-                    src="./frontend/assets/images/icons/sample-food-icon.svg"
-                    alt="..."
-                  />
-                </div>
-                <span>ORDER</span>
-                <br />
-                Sample Food
-              </div>
+            <div className="col-12">
+              <Calendar
+                id="datepicker"
+                style={{ color: "#fff" }}
+                onChange={changeDate}
+                value={value}
+              />
             </div>
             <div className="col-12 bk-area2">
               <div className="cnt-area1">
@@ -155,7 +224,6 @@ function ContentArea(props) {
                 />
                 <hr className="hrCol" />
                 <div className="cnt-area-fnt">* Select your Preference</div>
-
                 <div className="flex-container2">
                   <div>
                     <button
@@ -164,40 +232,44 @@ function ContentArea(props) {
                     >
                       {session.session}
                     </button>
-                    <img
+                    {/* <img
                       className="algn-rght"
                       src="./frontend/assets/images/next-32.png"
                       alt="..."
-                    />
+                    /> */}
                   </div>
+
                   <div>
                     <button
-                      onClick={(e) => modalOpen("food")}
+                      onClick={(e) => modalOpen("seating")}
                       className="btn btn-heyEvents"
                     >
-                      Food Preference
+                      {seating.seating}
                     </button>
-                    <img
+                    {/* <img
                       className="algn-rght"
                       src="./frontend/assets/images/next-32.png"
                       alt="..."
-                    />
+                    /> */}
                   </div>
-                  <div>
-                    <button
-                      type="button"
-                      className="btn btn-heyEvents"
-                      data-toggle="modal"
-                      data-target="#bd-example-modal-lg3"
-                    >
-                      Other Preferences
-                    </button>
-                    <img
-                      className="algn-rght"
-                      src="./frontend/assets/images/next-32.png"
-                      alt="..."
-                    />
-                  </div>
+                  {/* <div>
+                    Food Preference
+                    <select>
+                      <option>Select </option>
+                      <option>Veg</option>
+                      <option>Non-Veg</option>
+                    </select>
+                  </div> */}
+
+                  {/* <div>
+                    Food Timming
+                    <select onChange={(e) => openFood(e)}>
+                      <option>Select </option>
+                      <option key="BreakFast">BreakFast</option>
+                      <option key="Lunch">Lunch</option>
+                      <option key="Dinner">Dinner</option>
+                    </select>
+                  </div> */}
                 </div>
 
                 <Modal show={model} handleClose={(e) => modalClose(e)}>
@@ -211,8 +283,26 @@ function ContentArea(props) {
                   {type === "login" && (
                     <LoginModal handleSubmit={loginSubmit} />
                   )}
-                </Modal>
 
+                  {type === "seating" && (
+                    <SeatingModal
+                      handleSubmit={handleSubmit}
+                      value={seating.seating}
+                    />
+                  )}
+
+                  {type === "BreakFast" && (
+                    <BreakFastModal handleSubmit={foodSubmit} />
+                  )}
+                  {type === "editMenu" && (
+                    <EditMenuModal handleSubmit={loginSubmit} />
+                  )}
+
+                  {type === "Lunch" && <LunchModal handleSubmit={foodSubmit} />}
+                  {type === "Dinner" && (
+                    <DinnerModal handleSubmit={foodSubmit} />
+                  )}
+                </Modal>
                 <div className="btmMargin1"></div>
                 <div className="cnt-area2">
                   <div className="row">

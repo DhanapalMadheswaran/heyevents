@@ -1,5 +1,5 @@
 import React from "react";
-import "./venue-selection.css";
+//import "./venue-selection.css";
 
 function NavBar(props) {
   return (

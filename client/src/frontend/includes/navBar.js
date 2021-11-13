@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./css/style.css";
+import "./css/responsive.css";
 function NavBar(props) {
   return (
     <div>
@@ -15,9 +16,9 @@ function NavBar(props) {
           <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <nav className="navbar navbar-expand-lg navbar-light bg-white">
               <div>
-                <a className="navbar-brand" href="index.html">
-                  <img src="./frontend/assets/images/logo.svg" />
-                </a>
+                <Link className="navbar-brand" to={"/"}>
+                  <img src="./frontend/assets/images/logo.svg" alt="..." />
+                </Link>
                 <button
                   className="navbar-toggler "
                   type="button"
@@ -36,14 +37,16 @@ function NavBar(props) {
                 id="navbarTogglerDemo01"
               >
                 <ul className="navbar-nav mr-auto">
-
-{props?.menu.map((slide, i) => (
-                  <li className="nav-item">
-                    <Link className="nav-link" to={`/category-list-${slide.name}`}>
-                      {slide.name}
-                    </Link>
-                  </li>
-                ))}
+                  {props?.menu.map((slide, i) => (
+                    <li className="nav-item">
+                      <Link
+                        className="nav-link"
+                        to={`/category-list-${slide.name}`}
+                      >
+                        {slide.name}
+                      </Link>
+                    </li>
+                  ))}
                   <div className="nav-div-align">
                     <ul className="navbar-nav">
                       <li className="nav-item">

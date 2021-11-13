@@ -21,6 +21,7 @@ const Routes = {
   listingPage: { url: "/category-list-:value", title: "Listing Page" },
   cartPage: { url: "/cart", title: "Cart Page" },
   cartDetailsPage: { url: "/cart-details", title: "Cart Details" },
+  checkout: { url: "/checkout", title: "checkout" },
 };
 
 export default Routes;

@@ -20,6 +20,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     Constants.routes.listingPage.url,
     Constants.routes.cartPage.url,
     Constants.routes.cartDetailsPage.url,
+    Constants.routes.checkout.url,
   ];
   const avaliablePaths = Object.values(Constants.routes).map((o) => o.url);
   //console.log(path);

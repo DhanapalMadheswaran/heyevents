@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import DatePicker from "react-multi-date-picker";
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
 import Grid from "@material-ui/core/Grid";
@@ -15,7 +15,17 @@ export default function AddSlotsForm() {
   const [available, setAvailable] = useState([]);
 
   const [slot, setSlot] = useState({ slots: [] });
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line no-undef
+  const formatDates = (avail_Date) => {
+    // eslint-disable-next-line array-callback-return
+    let availableDates = [];
+    avail_Date.map((date) => availableDates.push(date.format()));
+    setAvailable(availableDates);
+  };
+  useEffect(() => {
+    formatDates(dates);
+  }, [dates]);
   const handleCheckboxChange = (event) => {
     let newArray = [...slot.slots, event.target.value];
 
@@ -26,14 +36,7 @@ export default function AddSlotsForm() {
       slots: newArray,
     });
   };
-  const formatDates = () => {
-    // eslint-disable-next-line no-lone-blocks
-    // eslint-disable-next-line array-callback-return
-    dates.map((date) => {
-      let d = date.format();
-      setAvailable((available) => [...available, d]);
-    });
-  };
+
   const onFormSubmit = () => {
     let finalData = {
       vendorID: "6125cdeba9d8b67d2d488057",
@@ -41,6 +44,8 @@ export default function AddSlotsForm() {
       slots: slot.slots,
     };
     try {
+      console.log(finalData);
+      return;
       slotservice.create(finalData).then((res) => {
         Toast("success", "🦄 Slots Added Successfully!");
         history.push("/add_slots");

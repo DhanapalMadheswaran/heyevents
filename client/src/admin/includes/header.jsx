@@ -1,36 +1,30 @@
 import React, { Component } from "react";
-import "./dashlite.css";
 export default class Header extends Component {
   constructor(props) {
-        super(props)
+    super(props);
 
-        this.state = {
-            user: {},
-           
-        }
-    }
+    this.state = {
+      user: {},
+    };
+  }
 
   componentDidMount() {
-     
-    const storedData = JSON.parse(localStorage.getItem('profileData'));
+    const storedData = JSON.parse(localStorage.getItem("profileData"));
 
-    
-      this.setState({ ...this.state.user, user: storedData });
-  
-     if (!storedData) {
-            window.location.href = '/login';
-        }     
+    this.setState({ ...this.state.user, user: storedData });
+
+    if (!storedData) {
+      window.location.href = "/login";
+    }
   }
-  
+
   logout = (e) => {
     localStorage.clear();
-        window.location.href = '/login';
-    
-  }
- 
+    window.location.href = "/login";
+  };
+
   render() {
-  
-    let profile = this.state.user
+    let profile = this.state.user;
     return (
       <div className="nk-header nk-header-fixed is-light">
         <div className="container-fluid">
@@ -93,24 +87,24 @@ export default class Header extends Component {
                     </div>
                     <div className="dropdown-inner">
                       <ul className="link-list">
-                        
                         <li>
                           <a href="/#">
                             <em className="icon ni ni-setting-alt"></em>
                             <span>Account Setting</span>
                           </a>
                         </li>
-                       
-                        
                       </ul>
                     </div>
                     <div className="dropdown-inner">
                       <ul className="link-list">
                         <li>
-                         
-                            <em className="icon ni ni-signout"></em>
-                           <button className="primary" onClick={this.logout}>Logout</button>
-                          
+                          <a href="#!">
+                            <em
+                              className="icon ni ni-signout"
+                              onClick={this.logout}
+                            ></em>
+                            <span>Sign out</span>
+                          </a>
                         </li>
                       </ul>
                     </div>
