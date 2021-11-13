@@ -45,7 +45,7 @@ export default function SideBar() {
           <div className="nk-sidebar-menu" data-simplebar>
             <ul className="nk-menu">
               <li className="nk-menu-item">
-                <Link  to="/dashboard" className="nk-menu-link">
+                <Link to="/dashboard" className="nk-menu-link dash-list">
                   <span className="nk-menu-icon">
                     <em className="icon ni ni-dashlite"></em>
                   </span>
@@ -54,7 +54,7 @@ export default function SideBar() {
               </li>
 
               <li className="nk-menu-item">
-                <Link to="/category" className="nk-menu-link">
+                <Link to="/category" className="nk-menu-link dash-list">
                   <span className="nk-menu-icon">
                     <em className="icon ni ni-bitcoin-cash"></em>
                   </span>
@@ -62,51 +62,67 @@ export default function SideBar() {
                 </Link>
               </li>
               <li className="nk-menu-item">
-                <Link to="/slider" className="nk-menu-link">
+                <Link to="/slider" className="nk-menu-link dash-list">
                   <span className="nk-menu-icon">
                     <em className="icon ni ni-layers"></em>
                   </span>
                   <span className="nk-menu-text"> Slider</span>
                 </Link>
               </li>
-               <li className="nk-menu-item">
-                <Link to="/banner" className="nk-menu-link">
+              <li className="nk-menu-item">
+                <Link to="/banner" className="nk-menu-link dash-list">
                   <span className="nk-menu-icon">
                     <em className="icon ni ni-layers"></em>
                   </span>
                   <span className="nk-menu-text"> Banner</span>
                 </Link>
               </li>
-<li className="nk-menu-item">
-                <Link to="/add_slots" className="nk-menu-link">
+              <li className="nk-menu-item">
+                <Link to="/add_slots" className="nk-menu-link dash-list">
                   <span className="nk-menu-icon">
                     <em className="icon ni ni-layers"></em>
                   </span>
                   <span className="nk-menu-text"> Add Slots</span>
                 </Link>
               </li>
-              <li className="nk-menu-heading">
-                <h6 className="overline-title text-primary-alt">
-                  Pre-Built Pages
-                </h6>
-              </li>
-              <li className="nk-menu-item has-sub">
-                <Link to="/vendorList" className="nk-menu-link nk-menu-toggle">
-                  <span className="nk-menu-icon">
-                    <em className="icon ni ni-tile-thumb"></em>
+
+              <li className="dropdown user-dropdown nk-menu-item">
+                <a href="/#" className="dropdown-toggle" data-toggle="dropdown">
+                  <span class="nk-menu-icon">
+                    <em class="icon ni ni-tile-thumb vendor-icon"></em>
                   </span>
-                  <span className="nk-menu-text">Vendor</span>
-                </Link>
-                 <ul class="nk-menu-sub">
-                      <li className="nk-menu-item">
-                          <a href="vendorList" className="nk-menu-link"><span class="nk-menu-text">User List - Regular</span></a>
-                      </li>
-                      <li className="nk-menu-item">
-                          <a href="addVendor" className="nk-menu-link"><span class="nk-menu-text">User List - Compact</span></a>
-                      </li>
-                      
-                      
-                  </ul>
+                  <span class="nk-menu-heading">Vendor Master</span>
+                </a>
+                <ul className="nk-menu-sub">
+                  <div className="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1 drop-align">
+                    <div className="dropdown-inner">
+                      <ul className="link-list add-vendor">
+                        <li className="nk-menu-item">
+                          <Link
+                            to="/addvendor"
+                            className="nk-menu-link dash-list"
+                          >
+                            <span className="nk-menu-icon">
+                              <em className="icon ni ni-layers"></em>
+                            </span>
+                            <span className="nk-menu-text"> Add Vendor</span>
+                          </Link>
+                        </li>
+                        <li className="nk-menu-item">
+                          <Link
+                            to="/vendorList"
+                            className="nk-menu-link dash-list"
+                          >
+                            <span className="nk-menu-icon">
+                              <em className="icon ni ni-layers"></em>
+                            </span>
+                            <span className="nk-menu-text">Vendor List</span>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </ul>
               </li>
             </ul>
           </div>

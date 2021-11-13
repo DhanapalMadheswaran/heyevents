@@ -17,6 +17,7 @@ import PrivateRoute from "./shared/PrivateRoute";
 import CategoryList from "./frontend/categoryList";
 import Cart from "./frontend/cart/cart";
 import CartDetails from "./frontend/cart/cartDetails";
+import Checkout from "./frontend/checkout";
 function App() {
   return (
     <div className="App">
@@ -30,7 +31,6 @@ function App() {
               path="/venu-selection-:value"
               component={VenuSelection}
             ></PrivateRoute>
-
             <PrivateRoute
               exact
               path="/category-list-:value"
@@ -41,8 +41,12 @@ function App() {
               exact
               path="/cart-details"
               component={CartDetails}
+            ></PrivateRoute>{" "}
+            <PrivateRoute
+              exact
+              path="/checkout"
+              component={Checkout}
             ></PrivateRoute>
-
             <PrivateRoute exact path="/login" component={Login}></PrivateRoute>
             <PrivateRoute
               exact

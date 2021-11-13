@@ -1,19 +1,19 @@
 const express = require("express");
 const router = express.Router();
 
-const Slot = require("../../models/slotsModel");
+const Slots = require("../../models/slotsModel");
 
 //GET
-router.get("/", async (req, res) => {
-  Category.find().then((items) => {
-    res.json(items);
+router.get("/:id/", async (req, res) => {
+  await Slots.find({ vendorID: req.params.id }).then((items) => {
+    res.status(200).send(items);
   });
 });
 
 //INSERT
 router.post("/", async (req, res) => {
   try {
-    const user_data = await new Slot({
+    const user_data = await new Slots({
       vendorID: req.body.vendorID,
       dates: req.body.dates,
       slots: req.body.slots,

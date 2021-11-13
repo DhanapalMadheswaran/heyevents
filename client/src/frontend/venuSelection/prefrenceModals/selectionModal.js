@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
 function SelectionModal({ handleChange, handleSubmit, value }) {
+  let storedNames = [];
+  if (localStorage.getItem("slots")) {
+    storedNames = JSON.parse(localStorage.getItem("slots"));
+  }
+
   const [input, setInput] = useState({});
   const buttonClick = (e) => {
     setInput({
@@ -14,33 +19,32 @@ function SelectionModal({ handleChange, handleSubmit, value }) {
         <button
           name="modalInputName"
           className="btn btn-outline-heyEvents modal-body-img"
-          onClick={() => buttonClick("4:30am - 10:30am")}
+          onClick={() => buttonClick(storedNames[0])}
         >
           <img src="./frontend/assets/images/morning-session-icon.png" />
           <br />
-          4:30am - 10:30am
+          {storedNames[0]}
         </button>
 
         <button
           name="modalInputName"
           className="btn btn-outline-heyEvents modal-body-img"
-          onClick={() => buttonClick("10:30am - 3:30pm")}
+          onClick={() => buttonClick(storedNames[1])}
         >
           <img src="./frontend/assets/images/afternoon-session-icon.png" />
           <br />
-          10:30am - 3:30pm
+          {storedNames[1]}
         </button>
 
         <button
           name="modalInputName"
           className="btn btn-outline-heyEvents modal-body-img"
-          onClick={() => buttonClick("3:30pm - 9:30pm")}
+          onClick={() => buttonClick(storedNames[2])}
         >
           <img src="./frontend/assets/images/evening-session-icon.png" />
           <br />
-          3:30pm - 9:30pm
+          {storedNames[2]}
         </button>
-
       </div>
 
       <button onClick={(e) => handleSubmit(input)}>Save</button>
