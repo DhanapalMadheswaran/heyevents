@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "..\\..\\cv live\\ems"
+    },
+    {
+      "path": "..\\..\\cv live\\api-auth.smartmcs.io"
+    },
+    {
+      "path": "..\\..\\cv live\\api-superadmin.smartmcs.io"
+    }
+  ],
+  "settings": {}
+}
