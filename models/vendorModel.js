@@ -71,8 +71,39 @@ const VendorSchema = mongoose.Schema({
   ratting: {
     type: Number,
   },
-  price: {
+  total_amount: {
     type: Number,
+  },
+  advance: {
+    type: Number,
+  },
+  profile_image: {
+    type: String,
+  },
+  document_image: {
+    type: String,
+  },
+  idproof_image: {
+    type: String,
+  },
+  account_number: {
+    type: Number,
+  },
+  ifsc_code: {
+    type: String,
+  },
+  bank_name: {
+    type: String,
+  },
+  pan_number: {
+    type: String,
+  },
+  gst_number: {
+    type: String,
+  },
+
+  businessproof_document_name: {
+    type: String,
   },
 });
 

@@ -12,7 +12,7 @@ export default function AddSlotsForm() {
   const history = useHistory();
   let slotservice = new SlotsService();
   const [dates, setDates] = useState([]);
-  const [available, setAvailable] = useState([]);
+  const [available, setAvailable] = useState();
 
   const [slot, setSlot] = useState({ slots: [] });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,18 +37,18 @@ export default function AddSlotsForm() {
     });
   };
 
-  const onFormSubmit = () => {
+  const onFormSubmit = async () => {
+    let objDate = Object.assign({}, available);
     let finalData = {
       vendorID: "6125cdeba9d8b67d2d488057",
-      dates: available,
+      date: available,
       slots: slot.slots,
     };
+
     try {
-      console.log(finalData);
-      return;
-      slotservice.create(finalData).then((res) => {
+      await slotservice.create(finalData).then((res) => {
         Toast("success", "🦄 Slots Added Successfully!");
-        history.push("/add_slots");
+        //history.push("/add_slots");
       });
     } catch (error) {
       console.log(error);

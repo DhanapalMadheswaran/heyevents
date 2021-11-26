@@ -18,4 +18,14 @@ export default class SlotsService extends ApiService {
 
     return response;
   };
+
+  getAll = async (data) => {
+    let Url = `http://localhost:5000/api/slots/${data}`;
+
+    let response = await this.get(Url, data);
+    if (response.status !== 200) {
+      throw Error(response);
+    }
+    return response;
+  };
 }

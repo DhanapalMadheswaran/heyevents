@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Header from "../includes/header";
 import axios from "axios";
+import moment from "moment";
+import Toast from "../../components/toast";
+import { useHistory } from "react-router-dom";
 
 function Checkout(props) {
   const [formData, setFormData] = useState({});
   const [imgData, setimgData] = useState({});
   const cartData = JSON.parse(localStorage.getItem("cartData"));
   let event_date = localStorage.getItem("event_date");
+  const history = useHistory();
 
   useEffect(() => {
     async function fetchMyAPI() {
@@ -21,6 +25,37 @@ function Checkout(props) {
     }
     fetchMyAPI();
   }, []);
+  const submitOrder = async () => {
+    let event_date = localStorage.getItem("event_date");
+    let profile = JSON.parse(localStorage.getItem("profile"));
+    let booking_date = moment(new Date()).format("DD/MM/YYYY hh:mm A");
+
+    let data = {
+      vendorID: cartData[0].categoryID,
+      session: cartData[0].session,
+      seating: cartData[0].seating,
+      event_date: event_date,
+      booking_date: booking_date,
+      total_amount: 200000,
+      amount_received: formData.price,
+      payment_status: "partially_paid",
+      status: "booked",
+      customer_id: profile.userId,
+    };
+    try {
+      await axios
+        .post(`http://localhost:5000/api/orders/`, data)
+        .then((response) => {
+          localStorage.removeItem("cartData");
+          localStorage.removeItem("event_date");
+          localStorage.removeItem("slots");
+          Toast("success", "🦄 Order Placed Successfully!");
+          history.push(`/orders-${profile.userId}`);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div>
       <Header />
@@ -214,6 +249,7 @@ function Checkout(props) {
                 className="btn btn-heyEvents"
                 id="apply_coupon"
                 type="button"
+                onClick={submitOrder}
               >
                 Make a Payment
               </button>

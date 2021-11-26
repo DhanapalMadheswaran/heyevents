@@ -101,7 +101,6 @@ router.post("/", async (req, res) => {
     }
 
     const user_data = new Vendor(req.body);
-
     var data = user_data.save();
     res.json(user_data);
   } catch (error) {

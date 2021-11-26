@@ -11,6 +11,9 @@ router.post("/register", (req, res) => {
     const user = new User({
       email: req.body.email,
       password: hash,
+      name: req.body.username,
+      phone: req.body.phone,
+      role: 2,
     });
 
     User.findOne({ email: req.body.email })
@@ -27,9 +30,24 @@ router.post("/register", (req, res) => {
               message: "Error Creating USer",
             });
           }
-          res.status(201).json({
-            message: "User created!",
-            result: result,
+          fetchedUser = result;
+          const token = jwt.sign(
+            {
+              email1: fetchedUser.email,
+              userId: fetchedUser._id,
+              role: fetchedUser.role,
+            },
+            "secret_this_should_be_longer",
+            { expiresIn: "1h" }
+          );
+
+          res.status(200).json({
+            token: token,
+            expiresIn: 3600,
+            email: fetchedUser.email,
+            role: fetchedUser.role,
+            name: fetchedUser.name,
+            userId: fetchedUser._id,
           });
         });
       })
@@ -39,51 +57,6 @@ router.post("/register", (req, res) => {
         });
       });
   });
-});
-
-router.post("/login", (req, res) => {
-  let fetchedUser;
-
-  User.findOne({ email: req.body.email })
-    .then((user) => {
-      if (!user) {
-        return res.status(401).json({
-          message: "Auth failed no such user",
-        });
-      }
-
-      fetchedUser = user;
-      return bcrypt.compare(req.body.password, user.password);
-    })
-    .then((result) => {
-      //console.log(fetchedUser);
-      if (!result) {
-        return res.status(401).json({
-          message: "Auth failed inccorect password",
-        });
-      }
-      const token = jwt.sign(
-        {
-          email1: fetchedUser.email,
-          userId: fetchedUser._id,
-          role: fetchedUser.role,
-        },
-        "secret_this_should_be_longer",
-        { expiresIn: "1h" }
-      );
-
-      res.status(200).json({
-        token: token,
-        expiresIn: 3600,
-        email: fetchedUser.email,
-        role: fetchedUser.role,
-        name: fetchedUser.name,
-        userId: fetchedUser._id,
-      });
-    })
-    .catch((e) => {
-      console.log(e);
-    });
 });
 
 router.post("/user-login", async (req, res) => {
@@ -137,4 +110,5 @@ router.post("/user-login", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
 module.exports = router;

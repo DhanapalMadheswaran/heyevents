@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 
 function LoginModal({ handleSubmit, value }) {
-  const [input, setInput] = useState({});
+  const [input, setInput] = useState({ type: "login" });
+  const [data, setData] = useState({ type: "register" });
   const inputChange = (e) => {
     const { name, value } = e.target;
     setInput({
       ...input,
+      [name]: value,
+    });
+  };
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
       [name]: value,
     });
   };
@@ -84,54 +93,60 @@ function LoginModal({ handleSubmit, value }) {
           <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="register-part">
               <h3>Registration</h3>
-              <form class="needs-validation" novalidate>
-                <div class="row">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="phone"
-                    id="phone no"
-                    placeholder="Enter Phone no"
-                    value=""
-                    required
-                  />
 
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Enter Email id"
-                    value=""
-                    required
-                  />
+              <div class="row">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  id="username"
+                  autoComplete="new-password"
+                  onChange={onChange}
+                  placeholder="Enter username"
+                  required
+                />
 
-                  <input
-                    type="password"
-                    class="form-control"
-                    name="phone"
-                    id="password"
-                    placeholder="Password"
-                    value=""
-                    required
-                  />
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter Email id"
+                  name="email"
+                  autoComplete="new-password"
+                  onChange={onChange}
+                  required
+                />
 
-                  <input
-                    type="password"
-                    class="form-control"
-                    name="phone"
-                    id="password"
-                    placeholder="Confirm Password"
-                    value=""
-                    required
-                  />
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  id="password"
+                  autoComplete="new-password"
+                  onChange={onChange}
+                  placeholder="Password"
+                  required
+                />
 
-                  <div class="reg-btn">
-                    <button class="tablinks btn btn-heyEvents" type="Register">
-                      Register
-                    </button>
-                  </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="phone"
+                  id="phone"
+                  autoComplete="new-password"
+                  onChange={onChange}
+                  placeholder="Enter Phone Number"
+                  required
+                />
+
+                <div class="reg-btn">
+                  <button
+                    class="tablinks btn btn-heyEvents"
+                    onClick={(e) => handleSubmit(data)}
+                  >
+                    Register
+                  </button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

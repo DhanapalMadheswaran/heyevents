@@ -8,16 +8,12 @@ const sliderRouter = require("./routes/api/sliderRouter");
 const bannerRouter = require("./routes/api/bannerRouter");
 const userRouter = require("./routes/api/authenticationRouter");
 const slotsRouter = require("./routes/api/slotsRouter");
+const ordersRouter = require("./routes/api/ordersRouter");
 const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// app.use(
-//   cors({
-//     origin: "*",
-//   })
-// );
 var allowedOrigins = ["http://localhost:3000"];
 app.use(
   cors({
@@ -37,7 +33,6 @@ app.use(
 );
 
 const checkAuth = require("./middlewares/check-auth");
-//const db = require("./config/db").mongoURI;
 
 mongoose.connect("mongodb://localhost:27017/heyevents", {
   useNewUrlParser: true,
@@ -58,6 +53,7 @@ app.use("/api/slider", sliderRouter);
 app.use("/api/banner", bannerRouter);
 app.use("/api/user", userRouter);
 app.use("/api/slots", slotsRouter);
+app.use("/api/orders", ordersRouter);
 
 const port = process.env.PORT || 5000;
 
