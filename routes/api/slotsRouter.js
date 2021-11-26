@@ -13,19 +13,17 @@ router.get("/:id/", async (req, res) => {
 //INSERT
 router.post("/", async (req, res) => {
   try {
-    const user_data = await new Slots({
-      vendorID: req.body.vendorID,
-      dates: req.body.dates,
-      slots: req.body.slots,
-    });
-    var data = user_data
-      .save()
-      .then(() => {
-        res.status(200).json(data);
-      })
-      .catch((e) => {
-        res.status(500).json(e);
+    var dateArray = req.body.date;
+    for (var i = 0; i < dateArray.length; i++) {
+      let user_data = await new Slots({
+        vendorID: req.body.vendorID,
+        date: dateArray[i],
+        slots: req.body.slots,
       });
+
+      user_data.save();
+    }
+    return res.status(200).json({});
   } catch (err) {
     res.status(500).json(err.response);
   }

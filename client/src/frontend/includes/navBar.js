@@ -50,13 +50,13 @@ function NavBar(props) {
                   <div className="nav-div-align">
                     <ul className="navbar-nav">
                       <li className="nav-item">
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="#!">
                           <i className="fa fa-search" aria-hidden="true"></i>{" "}
                           Search
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="#">
+                        <a className="nav-link" href="#!">
                           <i className="fa fa-user" aria-hidden="true"></i>{" "}
                           Login
                         </a>
@@ -79,7 +79,7 @@ function NavBar(props) {
       </div>
       <div className="flex-container-logo logo-placement">
         <div className="logo-clr">
-          <img src="./frontend/assets/images/overlay-logo.svg" />
+          <img src="./frontend/assets/images/overlay-logo.svg" alt="..." />
         </div>
       </div>
     </div>

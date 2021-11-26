@@ -22,6 +22,15 @@ const Routes = {
   cartPage: { url: "/cart", title: "Cart Page" },
   cartDetailsPage: { url: "/cart-details", title: "Cart Details" },
   checkout: { url: "/checkout", title: "checkout" },
+  eventVendorprofile: {
+    url: "/eventVendorprofile",
+    title: "eventVendorprofile",
+  },
+  orders: { url: "/orders-:value", title: "Orders" },
+  eventVendorAddSlots: {
+    url: "/eventVendorAddSlots-:value",
+    title: "eventVendorAddSlots",
+  },
 };
 
 export default Routes;

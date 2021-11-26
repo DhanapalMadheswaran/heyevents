@@ -44,7 +44,7 @@ export default class AddVendor extends Component {
     if (!isEdit) {
       let imgArray = [];
       data.image.forEach((img) => {
-        imgArray.push(this.fileuploadservice.upload(img.image));
+        imgArray.push(this.fileuploadservice.vendorupload(img.image));
       });
       Promise.all(imgArray).then(async (imgRes) => {
         if (!isEdit) {

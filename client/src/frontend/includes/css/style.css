@@ -526,7 +526,7 @@ svg {
 }
 
 .slide-img {
-  position: fixed !important;
+  position: absolute;
 }
 
 .slide-img img {
@@ -1419,21 +1419,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /*-------Detail-page5------*/
 
-.left-budget p {
-  font-size: 22px;
-  color: #801c17;
-  font-family: "Montserrat", serif;
-  font-weight: bold;
-}
-.left-budget p b {
-  font-size: 30px;
-}
-.left-budget i {
-  color: #d19050;
-}
-.left-budget button {
-  width: 40% !important;
-}
 .flex-container-logo1 > div {
   background-color: white;
   margin: -40%;
@@ -2364,7 +2349,7 @@ a:focus {
 /*------------profile page 1/10--------------*/
 
 .profile-tabs {
-  background-color: #801c17;
+  background-color: #801c17 !important;
 
   flex-direction: row !important;
   margin-bottom: 1px;
@@ -2506,16 +2491,15 @@ a:focus {
   color: #000 !important;
   background-color: #e4e4e4;
 }
-
-.basic-inputdrop i {
-  margin-top: 10px;
-  margin-bottom: -35px;
-  padding: 10px;
-  float: right;
-  color: #d19050;
+.basic-inputblock .form-group {
+  margin-bottom: 10px !important;
 }
-.basic-inputdrop {
-  margin-top: -10px;
+.basic-inputblock .input-group .form-control {
+  background-color: #e4e4e4 !important;
+}
+.basic-inputblock .input-group-prepend i {
+  color: #d19050;
+  padding-left: 15px;
 }
 
 .input-checkbox {
@@ -2528,7 +2512,7 @@ a:focus {
 .yes-checkbox span {
   color: #801c17 !important;
   font-weight: bold;
-  margin-left: 5px;
+  margin-left: 12px;
   vertical-align: sub;
 }
 .charge-input input {
@@ -2536,10 +2520,98 @@ a:focus {
 }
 
 .yes-checkbox .form-check-input {
-  height: 18px;
-  width: 20px;
+  margin-top: 5px !important;
+  margin-left: -5px !important;
 }
 
+.yes-checkbox img {
+  width: 15px;
+  height: 17px;
+  margin-right: 5px;
+  vertical-align: text-top;
+}
+
+.dimension-textbox {
+  margin-left: -35px;
+  margin-top: 20px;
+}
+
+.dimension-textbox span {
+  color: #801c17;
+  font-weight: bold;
+}
+
+.banquets-inputblock .input-checkbox {
+  margin-top: 12px;
+}
+
+.dimension-textbox .form-control {
+  height: 30px;
+  width: 100px;
+  margin-left: -26px !important;
+  color: #000 !important;
+}
+
+/*--Finance & Legal Sec--*/
+.bank-pan h4 {
+  font-weight: bold;
+}
+.bank-details h5 {
+  text-align: initial !important;
+}
+.bank-details h5 span i {
+  margin-right: 5px;
+}
+.bank-details a {
+  float: right;
+}
+.bank-inputdetail {
+  padding: 30px;
+  border: 1px solid #000;
+}
+.bank-inputdetail .form-control {
+  color: #000 !important;
+}
+.bank-inputdetail .ifsc-block {
+  margin-top: 20px;
+}
+.bank-inputdetail span {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.bank-checkbox {
+  padding: 30px;
+}
+
+.card-proof .form-control {
+  color: #000 !important;
+}
+
+/*Upolad section*/
+
+.upload-pic {
+  position: relative;
+  overflow: hidden;
+}
+.upload-pic .btn-light {
+  margin-left: 30px;
+  font-size: 15px !important;
+}
+.upload-pic input {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  font-family: "Montserrat", serif;
+}
+.upload-pic .preview img {
+  height: auto;
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 34px;
+}
 .done-btn {
   display: block !important;
   text-align: center;
@@ -2553,6 +2625,10 @@ a:focus {
   font-weight: bold;
 }
 
+.get-done span {
+  font-size: 20px;
+  display: block;
+}
 .tango-detail {
   text-align: center;
   padding: 25px;
@@ -2618,4 +2694,255 @@ a:focus {
   color: #801c17;
   font-size: 18px;
   font-weight: bold;
+}
+
+/*-----------Banquets gallery page --------------*/
+
+.press-enter {
+  justify-content: center;
+}
+.press-enter p {
+  padding: 5px;
+  color: #801c17;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.tango-residency h1 {
+  border: 1px solid #801c17;
+  color: #801c17;
+  padding: 3px;
+  padding-left: 10px;
+  font-weight: bold;
+  margin-bottom: 1px;
+  border-bottom: 2px solid;
+}
+.tango-residency p {
+  border: 1px solid #801c17;
+  color: #801c17;
+  padding: 3px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-top: 2px solid;
+}
+
+.add-one {
+  background-color: #e4e4e4;
+  height: 500px;
+}
+.add-two {
+  background-color: #e4e4e4;
+  height: 290px;
+  margin-bottom: 10px;
+}
+.add-three {
+  background-color: #e4e4e4;
+  height: 200px;
+}
+
+.addplus-btn {
+  text-align: center;
+}
+.addplus-btn button {
+  background-color: #801c17;
+  border-radius: 100px;
+  margin-top: 240px;
+}
+.addplus-btn i {
+  color: #d19050;
+  padding: 2px;
+  margin-top: 2px;
+  font-size: 25px;
+}
+
+.addtwo-btn {
+  text-align: center;
+}
+.addtwo-btn button {
+  background-color: #801c17;
+  border-radius: 100px;
+  margin-top: 120px;
+}
+.addtwo-btn i {
+  color: #d19050;
+  padding: 2px;
+  margin-top: 2px;
+  font-size: 25px;
+}
+.add-more {
+  padding: 85px;
+  font-size: 20px;
+  text-align: center;
+}
+.add-more button {
+  color: #000;
+}
+.venue-filter .select-block {
+  background-color: #801c17;
+  color: #fff;
+  padding: 15px;
+  margin: 1px;
+  font-size: 18px;
+}
+.select-block input {
+  height: 16px;
+  width: 16px;
+}
+.select-block label {
+  margin-left: 5px;
+}
+.venue-filter {
+  border: 1px solid #801c17;
+}
+.venue-filter p {
+  margin-left: 20px;
+  font-size: 22px;
+  padding: 10px;
+  margin-bottom: 0px;
+  color: #801c17;
+  font-weight: bold;
+}
+
+.rate-inclusive {
+  margin-top: 5px;
+}
+.rate-inclusive p {
+  border: 1px solid #801c17;
+  padding: 10px;
+  text-align: center;
+  line-height: 18px;
+  font-size: 26px;
+  color: #801c17;
+  font-weight: bold;
+  border-bottom: 2px solid;
+}
+.rate-inclusive span {
+  font-size: 16px;
+}
+.rate-inclusive h5 {
+  margin-top: -13px;
+  border: 1px solid #801c17;
+  padding: 5px;
+  color: #801c17;
+  font-weight: bold;
+  border-top: 2px solid;
+  text-align: center;
+}
+.guest-entry {
+  border: 2px solid #801c17;
+  padding: 20px;
+  border-bottom: none;
+}
+.guest-entry p {
+  font-size: 22px;
+  color: #801c17;
+  font-weight: bold;
+}
+.theatre-sec {
+  margin-bottom: 15px;
+}
+.theatre-sec span {
+  margin-left: 5px;
+  color: #801c17;
+  font-size: 18px;
+  font-weight: bold;
+}
+.theatre-sec img {
+  width: 30px;
+  height: 30px;
+}
+
+/*----Banquets Addevent------*/
+
+.minimum-one {
+  padding: 35px;
+}
+.add-one-hall {
+  height: 300px;
+  background-color: #e4e4e4;
+}
+.select-one {
+  padding: 100px;
+  margin-top: 20px;
+}
+.select-one span {
+  color: #801c17;
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*----Business Manager------*/
+
+.business-analytics {
+  padding: 50px;
+}
+.business-analytics p {
+  font-size: 40px;
+  color: #801c17;
+  font-weight: bold;
+  line-height: 10px;
+}
+.business-analytics span {
+  font-size: 30px;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #801c17;
+}
+/*Line chart*/
+.business-chart {
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+/*-----------Reviews page --------------*/
+
+.check-reply p {
+  font-size: 35px;
+  line-height: 35px;
+  color: #801c17;
+  font-weight: bold;
+  margin-left: 330px;
+}
+.check-reply i {
+  font-size: 150px;
+  margin-left: 20px;
+  color: #801c17;
+}
+.review-count {
+  border: 2px solid #801c17;
+  padding-left: 5px;
+  padding-right: 20px;
+}
+.review-box {
+  justify-content: center;
+}
+.review-count span {
+  font-size: 70px;
+  color: #801c17;
+}
+.review-count p {
+  font-size: 25px;
+  line-height: 25px;
+  margin-left: -30px;
+  margin-top: 25px;
+  color: #801c17;
+  font-weight: bold;
+}
+.review-txtbox {
+  border: 2px solid brown;
+  padding: 50px;
+}
+.rev-name {
+  font-size: 23px;
+  color: #801c17;
+  font-weight: bold;
+}
+/*-----Review onclick-----*/
+#form1 {
+  display: none;
+}
+#form1 .form-control {
+  color: #000 !important;
 }

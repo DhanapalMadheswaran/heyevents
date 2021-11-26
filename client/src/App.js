@@ -18,6 +18,9 @@ import CategoryList from "./frontend/categoryList";
 import Cart from "./frontend/cart/cart";
 import CartDetails from "./frontend/cart/cartDetails";
 import Checkout from "./frontend/checkout";
+import EventVendorprofile from "./frontend/eventVendors/eventVendorprofile";
+import Orders from "./frontend/orders";
+import SlotsForm from "./frontend/eventVendors/slotsForm";
 function App() {
   return (
     <div className="App">
@@ -46,6 +49,21 @@ function App() {
               exact
               path="/checkout"
               component={Checkout}
+            ></PrivateRoute>
+            <PrivateRoute
+              exact
+              path="/eventVendorprofile"
+              component={EventVendorprofile}
+            ></PrivateRoute>{" "}
+            <PrivateRoute
+              exact
+              path="/eventVendorAddSlots-:value"
+              component={SlotsForm}
+            ></PrivateRoute>
+            <PrivateRoute
+              exact
+              path="/orders-:value"
+              component={Orders}
             ></PrivateRoute>
             <PrivateRoute exact path="/login" component={Login}></PrivateRoute>
             <PrivateRoute

@@ -4,8 +4,8 @@ const SlotsSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  dates: {
-    type: Array,
+  date: {
+    type: String,
     required: true,
   },
   slots: {

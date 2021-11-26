@@ -7,10 +7,6 @@ import Modal from "./Modal";
 import LoginModal from "./loginModal";
 import SeatingModal from "./prefrenceModals/seatingModal";
 import SelectionModal from "./prefrenceModals/selectionModal";
-import BreakFastModal from "./prefrenceModals/breakfastModal";
-import LunchModal from "./prefrenceModals/lunchModal";
-import DinnerModal from "./prefrenceModals/dinnerModal";
-import EditMenuModal from "./editMenuModals/editMenuModal";
 import { CartUtils } from "../../shared/utils";
 import Toast from "../../components/toast";
 import Calendar from "react-calendar";
@@ -98,68 +94,96 @@ function ContentArea(props) {
   };
 
   const loginSubmit = async (e) => {
-    let data = {
-      email: e.email,
-      password: e.password,
-    };
-    try {
-      const loginResponse = await axios.post(
-        "http://localhost:5000/api/user/user-login",
-        data
-      );
-      let status = loginResponse.data.success;
-      if (status) {
-        try {
-          localStorage.setItem(
-            "profile",
-            JSON.stringify(loginResponse.data.user)
-          );
-        } catch (err) {
-          console.error(err);
-        }
-        const lastItem = window.location.pathname.split("-").pop();
-        //add vendor data to user cart
-        try {
-          let {
-            success = false,
-            error = false,
-            warning = false,
-          } = CartUtils(category_name, session, seating, lastItem);
-          if (warning) {
-            Toast("warning", "🦄 Vendor Already Exists in your Cart!");
+    if (e.type === "login") {
+      let data = {
+        email: e.email,
+        password: e.password,
+      };
+      try {
+        const loginResponse = await axios.post(
+          "http://localhost:5000/api/user/user-login",
+          data
+        );
+        let status = loginResponse.data.success;
+        if (status) {
+          try {
+            localStorage.setItem(
+              "profile",
+              JSON.stringify(loginResponse.data.user)
+            );
+          } catch (err) {
+            console.error(err);
+          }
+          const lastItem = window.location.pathname.split("-").pop();
+          //add vendor data to user cart
+          try {
+            let {
+              success = false,
+              error = false,
+              warning = false,
+            } = CartUtils(category_name, session, seating, lastItem);
+            if (warning) {
+              Toast("warning", "🦄 Vendor Already Exists in your Cart!");
 
-            history.push("/cart-details");
+              history.push("/cart-details");
+            }
+            if (success) {
+              Toast("success", "🦄 Vendor Added in your Cart!");
+              history.push("/cart-details");
+            }
+            if (error) {
+              Toast("error", "🦄 Try Again!");
+            }
+          } catch (err) {
+            console.error(err);
           }
-          if (success) {
-            Toast("success", "🦄 Vendor Added in your Cart!");
-            history.push("/cart-details");
-          }
-          if (error) {
-            Toast("error", "🦄 Try Again!");
-          }
-        } catch (err) {
-          console.error(err);
+          modalClose();
+        } else {
+          alert(loginResponse.data.message);
         }
-        modalClose();
-      } else {
-        alert(loginResponse.data.message);
+      } catch (err) {
+        console.log(err);
       }
-    } catch (err) {
-      console.log(err);
+    }
+    //Register
+    else {
+      let data = {
+        email: e.email,
+        password: e.password,
+        phone: e.phone,
+        username: e.username,
+      };
+      try {
+        const RegisterResponse = await axios.post(
+          "http://localhost:5000/api/user/register",
+          data
+        );
+        let status = RegisterResponse.data.success;
+        console.log(RegisterResponse.data.message);
+        if (status) {
+          try {
+            localStorage.setItem(
+              "profile",
+              JSON.stringify(RegisterResponse.data.user)
+            );
+            Toast("success", RegisterResponse.data.message);
+            modalClose();
+          } catch (err) {
+            console.error(err);
+          }
+
+          modalClose();
+        } else {
+          alert(RegisterResponse.data.message);
+          modalClose();
+        }
+      } catch (err) {
+        modalClose();
+        Toast("error", "Email Already Exists");
+      }
     }
   };
 
-  const openFood = (e) => {
-    setModel(true);
-    setType(e.target.value);
-  };
-
-  const foodSubmit = (e) => {
-    if (e === "editMenu") {
-      setModel(true);
-      setType("editMenu");
-    }
-  };
   const changeDate = async (e) => {
     let v = moment(e).format("DD/MM/YYYY");
 
@@ -289,18 +313,6 @@ function ContentArea(props) {
                       handleSubmit={handleSubmit}
                       value={seating.seating}
                     />
-                  )}
-
-                  {type === "BreakFast" && (
-                    <BreakFastModal handleSubmit={foodSubmit} />
-                  )}
-                  {type === "editMenu" && (
-                    <EditMenuModal handleSubmit={loginSubmit} />
-                  )}
-
-                  {type === "Lunch" && <LunchModal handleSubmit={foodSubmit} />}
-                  {type === "Dinner" && (
-                    <DinnerModal handleSubmit={foodSubmit} />
                   )}
                 </Modal>
                 <div className="btmMargin1"></div>
